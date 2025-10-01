@@ -69,4 +69,5 @@ resource "aws_instance" "name" {
   ami           = "ami-0432b8889b74a73e6" # Windows Server AMI
   instance_type = "t2.micro"
   key_name      = data.aws_key_pair.name.key_name
+  vpc_security_group_ids = [aws_security_group.asg.id]
 }
