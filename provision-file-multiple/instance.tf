@@ -20,8 +20,8 @@ resource "aws_instance" "main" {
   }
 
     provisioner "file" {
-    source = "script1.sh"
-    destination = "/tmp/script1.sh"
+    content = "this is test content"
+    destination = "/tmp/content.txt"
     }
 
   tags = {
