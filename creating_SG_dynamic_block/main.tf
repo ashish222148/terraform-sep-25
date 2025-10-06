@@ -14,3 +14,6 @@ resource "aws_security_group" "ailiya-SG" {
     }
   }
 }
+output "listofports" {
+  value = [for key, value in aws_security_group.ailiya-SG.ingress: value.from_port]
+}
